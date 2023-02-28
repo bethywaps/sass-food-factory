@@ -1,0 +1,202 @@
+.banner{
+    &__wrapper{
+        min-height: calc(100vh - 60px);
+
+    }
+    &__content{
+        max-width: 50rem;
+        width: 100%;
+        h1{
+            font-size: clamp(3rem, 6vw ,6rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            span{
+                color: $clr-primary;
+            }
+        }
+        p{
+            font-size: 1.8rem;
+            margin-bottom: 4rem;
+        }
+        a:last-child{
+            margin-left: 2rem;
+         
+        }
+}
+}
+
+// ------product----
+
+.product{
+    &__cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 2rem;
+    }
+    &__item{
+        box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.06);
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content:'';
+            top:0;
+            left:0;
+            height: 0rem;
+            background-color: $clr-primary;
+            width: 0;
+            position: absolute;
+            z-index: -1;
+            transition: .5s ease;
+            
+
+        }
+        &:hover::before{
+            width: 50%;
+            height: 15rem;
+        }
+        &:hover a{
+            background-color: $clr-primary;
+            color: $clr-light;
+            transition: .5s ease;
+            position: relative;
+            
+        }
+        img{
+            border-radius: 50%;
+            width: 20rem;
+            height: 20rem;
+            margin: 0 auto 3rem;
+            display: block;
+        }
+        a{
+            display: block;
+            text-align: center;
+        }
+        .item__info{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            align-items: center;
+            h3{
+                font-weight: bold;
+                font-size: 2.5rem;
+            }
+            h4{
+                font-weight: bolder;
+                font-size: 2rem;
+            }
+            small{
+                font-size: 1.2rem;
+                opacity: 0.3;
+                font-weight: bold;
+            }
+
+        }
+        .item__review{
+            h4{
+                font-size: 1.4rem;
+
+            }
+            i{
+                color: $clr-primary;
+            }
+        }
+
+    }
+  
+}
+
+.product__item.reverse {
+    &::before{
+        right: 0;
+        left:unset;
+    }
+    
+}
+.category__tab {
+ 
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        border-radius: 3rem;
+        box-shadow: $shadow;
+        max-width: 43rem;
+        width: 100%;
+        margin: 0 auto 6rem;
+        
+        li {
+           
+            min-width: 7rem;
+           a {
+            display: block;
+            padding:1rem;
+            text-align: center;
+            border-radius: 3rem;
+            &:hover {
+                background-color: $clr-primary;
+                color: $clr-light;
+            }
+           }
+        }
+        li.active a {
+            background-color: $clr-primary;
+            color: $clr-light;
+           
+        }
+    }
+}
+// ---booking----
+
+.booking{
+    min-height: 50rem;
+    background-image:url(/img/restaurant1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 0, 7rem;
+    background-size: fill;
+    &__content{
+        background-color: $clr-primary;
+        color: $clr-light;
+        height: 50rem;
+        width: 50%;
+        position: relative;
+        display: grid;
+        justify-content: flex-start;
+        place-items: center;
+
+        &::before{
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 0;
+            height: 100%;
+            width: 40vw;
+            background-color: $clr-primary;
+        }
+        .inner{
+            max-width: 40rem;
+            width: 100%;
+            small{
+                text-transform: uppercase;
+                color: $clr-dark;
+                font-weight: 800;
+                font-size: 1.8rem;
+
+            }
+            h2{
+                font-size: clamp(5rem,6vw,5rem);
+                font-weight: bold;
+                margin: 3rem 0;
+            }
+            p{
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
