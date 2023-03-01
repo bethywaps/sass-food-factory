@@ -67,6 +67,13 @@ p {
   margin-bottom: 1rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+  color: #ff9a1e;
+}
+
 .container {
   width: 100%;
   max-width: 120rem;
@@ -422,6 +429,11 @@ p {
 .header .branding span {
   color: #ff9a1e;
 }
+@media screen and (max-width: 48rem) {
+  .header__nav {
+    display: none;
+  }
+}
 .header__nav a {
   position: relative;
 }
@@ -482,13 +494,21 @@ p {
 .banner__wrapper {
   min-height: calc(100vh - 60px);
 }
+@media screen and (max-width: 48rem) {
+  .banner__wrapper {
+    flex-direction: column;
+    min-height: auto;
+    justify-content: flex-start;
+    gap: 5rem;
+    margin-top: 5rem;
+  }
+}
 .banner__content {
   max-width: 50rem;
   width: 100%;
 }
 .banner__content h1 {
   font-size: clamp(3rem, 6vw, 6rem);
-  font-weight: bold;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
@@ -505,8 +525,15 @@ p {
 
 .product__cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+}
+@media screen and (max-width: 48rem) {
+  .product__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
 }
 .product__item {
   box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.06);
@@ -540,6 +567,10 @@ p {
   border-radius: 50%;
   width: 20rem;
   height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
   margin: 0 auto 3rem;
   display: block;
 }
@@ -548,9 +579,9 @@ p {
   text-align: center;
 }
 .product__item .item__info {
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
   align-items: center;
 }
 .product__item .item__info h3 {
@@ -615,6 +646,13 @@ p {
   background-position: 0, 7rem;
   background-size: fill;
 }
+@media screen and (max-width: 48rem) {
+  .booking .booking__content {
+    padding: 2rem;
+    width: 100%;
+    background-position: 0, 0;
+  }
+}
 .booking__content {
   background-color: #ff9a1e;
   color: #fff;
@@ -625,6 +663,12 @@ p {
   justify-content: flex-start;
   place-items: center;
 }
+@media screen and (max-width: 48rem) {
+  .booking__content {
+    width: 100%;
+    background-color: rgba(255, 154, 30, 0.8);
+  }
+}
 .booking__content::before {
   content: "";
   position: absolute;
@@ -633,6 +677,12 @@ p {
   height: 100%;
   width: 40vw;
   background-color: #ff9a1e;
+}
+@media screen and (max-width: 48rem) {
+  .booking__content::before {
+    padding: 2rem 0;
+    display: none;
+  }
 }
 .booking__content .inner {
   max-width: 40rem;
@@ -655,8 +705,15 @@ p {
 
 .work__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+}
+@media screen and (max-width: 48rem) {
+  .work__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3rem;
+  }
 }
 .work__wrapper .work__card {
   padding: 2rem;
@@ -692,11 +749,25 @@ p {
   padding: 2rem 10rem;
   background-color: #ffe2bf;
   border-radius: 3rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-height: 44rem;
+  max-height: 74rem;
   height: 100%;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+}
+@media screen and (max-width: 48rem) {
+  .app__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 48rem) {
+  .app__image {
+    text-align: center;
+  }
 }
 .app__content {
   max-width: 55rem;
@@ -719,13 +790,20 @@ p {
 
 .testimonials__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+}
+@media screen and (max-width: 48rem) {
+  .testimonials__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3rem;
+  }
 }
 .testimonials__card {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-gap: 1rem;
+  grid-template-columns: 1fr 1.8fr;
+  grid-gap: 2rem;
   border-radius: 1rem;
   box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.06);
   padding: 1rem;
@@ -759,9 +837,12 @@ p {
 .testimonials .testimonials__img img {
   width: 10rem;
   height: 10rem;
-  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .testimonials .testimonials__img h4 {
   font-weight: bold;
@@ -791,6 +872,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 1px;
 }
 .newsletter__wrapper {
   max-width: 75rem;
@@ -827,6 +909,13 @@ p {
   border: 3px solid #fff;
   transform: translate(-12px);
 }
+@media screen and (max-width: 48rem) {
+  .newsletter__wrapper form button {
+    width: 28rem;
+    margin-top: 1rem;
+    transform: translateX(0);
+  }
+}
 
 .faq__block {
   border-radius: 2rem;
@@ -861,40 +950,6 @@ p {
 .faq .faq__answer.open {
   max-height: 20rem;
 }
-.footer {
-  background-color: #2b2b2b;
-  color: #fff;
-}
-.footer .footer__wrapper {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
-  grid-gap: 1rem;
-}
-.footer .footer__wrapper .footer__item h3 {
-  text-transform: uppercase;
-  margin-bottom: 3rem;
-  font-weight: bold;
-  font-size: 1.8rem;
-}
-.footer .footer__wrapper .footer__item h3 span {
-  color: #ff9a1e;
-}
-.footer .footer__wrapper .footer__item p {
-  width: 80%;
-}
-.footer .footer__wrapper .footer__item ul li {
-  margin-bottom: 1.6rem;
-}
-.footer .footer__wrapper .footer__item ul li a {
-  color: #fff;
-}
-
-.copyright {
-  background-color: #2b2b2b;
-  text-align: center;
-  color: #ff9a1e;
-  padding: 0.5rem 0;
-}
 
 .block__header {
   text-align: center;
@@ -911,4 +966,46 @@ p {
 .block__header h2 span {
   text-transform: capitalize;
   font-weight: bold;
+}
+
+.footer {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+}
+@media screen and (max-width: 48rem) {
+  .footer__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+}
+.footer__wrapper a {
+  color: #fff;
+}
+.footer__wrapper li {
+  margin-bottom: 1.6rem;
+}
+.footer__wrapper .footer__item h3 {
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+.footer__wrapper .footer__item h3 span {
+  color: #ff9a1e;
+}
+.footer__wrapper .footer__item p {
+  width: 80%;
+}
+
+.copyright {
+  background-color: #2b2b2b;
+  text-align: center;
+  color: #ff9a1e;
+  padding: 0.5rem 0;
 }/*# sourceMappingURL=main.css.map */
